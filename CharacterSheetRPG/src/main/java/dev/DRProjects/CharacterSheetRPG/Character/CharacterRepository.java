@@ -1,4 +1,6 @@
 package dev.DRProjects.CharacterSheetRPG.Character;
 
-public interface CharacterRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CharacterRepository extends JpaRepository<CharacterModel, Long> {
 }
