@@ -1,5 +1,6 @@
 package dev.DRProjects.CharacterSheetRPG.Player;
 
+import dev.DRProjects.CharacterSheetRPG.Character.CharacterModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,4 +18,7 @@ public class PlayerModel {
     private Long id;
     @Column(nullable = false) // Player name cannot be empty
     private String name;
+    @ManyToOne  //Many Characters for One Player
+    @JoinColumn(name = "character_id") // Foreign a key
+    private CharacterModel characters;
 }
